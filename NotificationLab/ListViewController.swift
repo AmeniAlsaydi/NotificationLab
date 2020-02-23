@@ -99,6 +99,26 @@ extension ListViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = timerNotification.content.subtitle
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+       
+        if editingStyle == .delete {
+            // delete pending notification
+            removeNotification(atIndexPath: indexPath)
+        }
+    }
+    private func removeNotification(atIndexPath indexpath: IndexPath) {
+         let timeNotification = timerNotifications[indexpath.row]
+        let identifier = timeNotification.identifier
+        
+        // remove from notification from UNNotification center
+        center.removePendingNotificationRequests(withIdentifiers: [identifier])
+        // remove from array
+        timerNotifications.remove(at: indexpath.row)
+        // remove from table view
+        tableView.deleteRows(at: [indexpath], with: .automatic)
+        
+    }
 }
 
 extension ListViewController: CreateVCDelegate {

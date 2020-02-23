@@ -77,7 +77,7 @@ class CreateViewController: UIViewController {
         addButton.isEnabled = true
         
         timeInterval = sender.countDownDuration // Use this property to get and set the currently selected value when the date picker’s mode property is set to "countdown timer"
-        //endTime = Date().timeIntervalSinceNow + timeInterval
+        // 2 mins = 120 
     }
     @IBAction func createButtonPressed(_ sender: UIButton) {
         createLocalNotification()
