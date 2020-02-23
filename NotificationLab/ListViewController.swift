@@ -7,15 +7,44 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    private let center = UNUserNotificationCenter.current()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        
+        checkForNotificationAuthorization()
 
+    }
+    
+    private func checkForNotificationAuthorization() {
+      center.getNotificationSettings { (settings) in
+        if settings.authorizationStatus == .authorized {
+          print("app is authorized for notifications")
+        } else {
+          self.requestNotificationPermissions()
+        }
+      }
+    }
+    
+    private func requestNotificationPermissions() {
+      center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+        if let error = error {
+          print("error requesting authorization: \(error)")
+          return
+        }
+        if granted {
+          print("access was granted")
+        } else {
+          print("access denied")
+        }
+      }
     }
 
 }
@@ -29,6 +58,4 @@ extension ListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "timerCell", for: indexPath)
         return cell
     }
-    
-    
 }
