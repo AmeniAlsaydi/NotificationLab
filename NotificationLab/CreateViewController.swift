@@ -22,6 +22,7 @@ class CreateViewController: UIViewController {
     
     
     private var timeInterval: TimeInterval! //dates and time are managed in time intervals (in seconds)
+   // private var endTime: TimeInterval!
     
     override func viewDidLayoutSubviews() {
         addButton.layer.cornerRadius = addButton.bounds.width/2
@@ -36,7 +37,8 @@ class CreateViewController: UIViewController {
         // step 1: create the content
         let content = UNMutableNotificationContent()
         content.title = textField.text ?? "No title"
-        content.subtitle = "Timer is complete"
+        let time = timeInterval.convertTime()
+        content.subtitle = "Timer for: \(time)"
         content.sound = .default
         
         let identifier = UUID().uuidString // create indentifier - a unique String
@@ -75,6 +77,7 @@ class CreateViewController: UIViewController {
         addButton.isEnabled = true
         
         timeInterval = sender.countDownDuration // Use this property to get and set the currently selected value when the date picker’s mode property is set to "countdown timer"
+        //endTime = Date().timeIntervalSinceNow + timeInterval
     }
     @IBAction func createButtonPressed(_ sender: UIButton) {
         createLocalNotification()

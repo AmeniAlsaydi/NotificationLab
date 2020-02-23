@@ -96,7 +96,7 @@ extension ListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "timerCell", for: indexPath)
         let timerNotification = timerNotifications[indexPath.row]
         cell.textLabel?.text = timerNotification.content.title
-        cell.detailTextLabel?.text = "Timer"
+        cell.detailTextLabel?.text = timerNotification.content.subtitle
         return cell
     }
 }
@@ -112,4 +112,16 @@ extension ListViewController: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
       completionHandler(.alert)
     }
+}
+
+extension Double {
+func convertTime() -> String {
+       let date = Date(timeIntervalSince1970: self)
+       let dateFormatter = DateFormatter()
+       dateFormatter.timeStyle = DateFormatter.Style.medium
+       dateFormatter.dateFormat = "h:mm a"
+       dateFormatter.timeZone = .current
+       let localDate = dateFormatter.string(from: date)
+       return localDate
+   }
 }
