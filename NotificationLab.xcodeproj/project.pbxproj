@@ -15,6 +15,7 @@
 		B76B1DB72402AF580075A8E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76B1DB52402AF580075A8E4 /* LaunchScreen.storyboard */; };
 		B76B1DBF2402B5DB0075A8E4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76B1DBE2402B5DB0075A8E4 /* ListViewController.swift */; };
 		B76B1DC12402C2C80075A8E4 /* PendingTimerNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76B1DC02402C2C80075A8E4 /* PendingTimerNotifications.swift */; };
+		B76B1DC32402D49D0075A8E4 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = B76B1DC22402D49D0075A8E4 /* clock.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B76B1DB82402AF580075A8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B76B1DBE2402B5DB0075A8E4 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B76B1DC02402C2C80075A8E4 /* PendingTimerNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTimerNotifications.swift; sourceTree = "<group>"; };
+		B76B1DC22402D49D0075A8E4 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock.png; path = ../../../../../../Downloads/clock.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				B76B1DAA2402AF550075A8E4 /* AppDelegate.swift */,
 				B76B1DAC2402AF550075A8E4 /* SceneDelegate.swift */,
 				B76B1DAE2402AF550075A8E4 /* CreateViewController.swift */,
+				B76B1DC22402D49D0075A8E4 /* clock.png */,
 				B76B1DBE2402B5DB0075A8E4 /* ListViewController.swift */,
 				B76B1DC02402C2C80075A8E4 /* PendingTimerNotifications.swift */,
 				B76B1DB02402AF550075A8E4 /* Main.storyboard */,
@@ -134,6 +137,7 @@
 				B76B1DB72402AF580075A8E4 /* LaunchScreen.storyboard in Resources */,
 				B76B1DB42402AF580075A8E4 /* Assets.xcassets in Resources */,
 				B76B1DB22402AF550075A8E4 /* Main.storyboard in Resources */,
+				B76B1DC32402D49D0075A8E4 /* clock.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

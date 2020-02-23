@@ -27,10 +27,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVh-fW-TuO">
-                                <rect key="frame" x="145" y="503" width="124" height="30"/>
-                                <color key="backgroundColor" red="0.85601911559999999" green="0.80977411210000005" blue="0.88360184580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal" title="Create Timer">
+                                <rect key="frame" x="145" y="503" width="124" height="124"/>
+                                <color key="backgroundColor" red="0.44099474700000002" green="0.52062419039999996" blue="0.48818321520000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DVh-fW-TuO" secondAttribute="height" multiplier="1:1" id="zx0-lk-git"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="START">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -130,8 +133,8 @@
                         <viewLayoutGuide key="safeArea" id="gdR-If-FwD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Timers" id="x1O-qz-40c">
-                        <barButtonItem key="rightBarButtonItem" image="timer" catalog="system" id="VSH-re-YBr">
-                            <color key="tintColor" red="0.79701307929999998" green="0.73376669839999997" blue="0.87012224739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <barButtonItem key="rightBarButtonItem" image="icons8-add-reminder-25" id="VSH-re-YBr">
+                            <color key="tintColor" red="0.087641025519999999" green="0.2725914935" blue="0.029153456729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="yLB-ka-zSQ" kind="presentation" id="lrL-E1-Ndh"/>
                             </connections>
@@ -166,6 +169,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-add-reminder-25" width="25" height="25"/>
         <image name="square.and.arrow.down" catalog="system" width="60" height="64"/>
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
