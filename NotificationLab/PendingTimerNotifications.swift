@@ -15,7 +15,7 @@ class PendingNotification {
     // is that even smth we would want to do?
   public func getPendingNotifications(completion: @escaping ([UNNotificationRequest]) -> ()) {
     UNUserNotificationCenter.current().getPendingNotificationRequests { (requests) in
-      print("there are \(requests.count) pending requests.")
+      //print("there are \(requests.count) pending requests.")
       completion(requests)
     }
   }

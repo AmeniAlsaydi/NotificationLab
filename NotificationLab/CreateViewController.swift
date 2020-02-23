@@ -37,7 +37,8 @@ class CreateViewController: UIViewController {
         // step 1: create the content
         let content = UNMutableNotificationContent()
         content.title = textField.text ?? "No title"
-        let time = timeInterval.convertTime()
+        let time = (Date().timeIntervalSince1970 + timeInterval).convertTime()
+      
         content.subtitle = "Timer for: \(time)"
         content.sound = .default
         
