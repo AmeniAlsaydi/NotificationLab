@@ -14,6 +14,8 @@ class ListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let center = UNUserNotificationCenter.current()
+    
+    private var refreshControl: UIRefreshControl!
 
     // data for table view
     private var timerNotifications = [UNNotificationRequest]() {
@@ -29,11 +31,18 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        
+        configureRefreshControl()
         checkForNotificationAuthorization()
         loadNotifications()
         center.delegate = self // setting this vc as the unnotificationcenter delegate
     }
+    
+    private func configureRefreshControl() {
+           refreshControl = UIRefreshControl()
+           tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(loadNotifications), for: .valueChanged) // at the event of value changing
+           
+       }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navController = segue.destination as? UINavigationController, let createVC =  navController.viewControllers.first as? CreateViewController else {
@@ -46,10 +55,10 @@ class ListViewController: UIViewController {
     @objc private func loadNotifications() {
       pendingNotification.getPendingNotifications { (requests) in
         self.timerNotifications = requests
-        // stop the refresh control from animating and remove from the UI
-//        DispatchQueue.main.async {
-//          self.refreshControl.endRefreshing()
-//        }
+         
+        DispatchQueue.main.async {
+          self.refreshControl.endRefreshing() // stop the refresh control from animating and remove from the UI
+        }
       }
     }
     
