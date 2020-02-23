@@ -1,24 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EYu-G4-Sb4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Set Timer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CreateViewController" customModule="NotificationLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmT-uq-ZIh">
+                                <rect key="frame" x="47" y="188" width="320" height="216"/>
+                            </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gki-WC-Ppl">
+                                <rect key="frame" x="20" y="419" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVh-fW-TuO">
+                                <rect key="frame" x="145" y="503" width="124" height="30"/>
+                                <color key="backgroundColor" red="0.85601911559999999" green="0.80977411210000005" blue="0.88360184580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Add Timer">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gki-WC-Ppl" firstAttribute="top" secondItem="lmT-uq-ZIh" secondAttribute="bottom" constant="15" id="1t0-vL-CHH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gki-WC-Ppl" secondAttribute="trailing" constant="20" id="3go-Z1-0m3"/>
+                            <constraint firstItem="lmT-uq-ZIh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="mO4-6m-zGD"/>
+                            <constraint firstItem="DVh-fW-TuO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="n5A-5L-Bfi"/>
+                            <constraint firstItem="DVh-fW-TuO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p0c-Ab-wLJ"/>
+                            <constraint firstItem="DVh-fW-TuO" firstAttribute="top" secondItem="Gki-WC-Ppl" secondAttribute="bottom" constant="50" id="qUO-Zy-CxE"/>
+                            <constraint firstItem="lmT-uq-ZIh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qkB-Hw-DUw"/>
+                            <constraint firstItem="Gki-WC-Ppl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yxz-90-IZs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Set Timer" id="Z2f-2n-Zjq"/>
+                    <connections>
+                        <outlet property="addButton" destination="DVh-fW-TuO" id="Yxq-XL-25w"/>
+                        <outlet property="datePicker" destination="lmT-uq-ZIh" id="DEG-pC-Gw7"/>
+                        <outlet property="textField" destination="Gki-WC-Ppl" id="lqY-vm-dc8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="3748" y="1000"/>
+        </scene>
+        <!--Set Timer-->
+        <scene sceneID="yXd-I1-sO7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yLB-ka-zSQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Set Timer" image="timer" catalog="system" id="gD5-ff-cxF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="aCk-kd-IOM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7vQ-4N-Cai"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I1f-E8-zwl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2838" y="1000"/>
+        </scene>
+        <!--Timers-->
+        <scene sceneID="NRL-r8-rxg">
+            <objects>
+                <viewController id="LCp-EZ-XkT" customClass="ListViewController" customModule="NotificationLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="abO-9f-ADM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oMN-eu-c8a">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="timerCell" textLabel="PD7-A4-1jk" detailTextLabel="Fy3-MB-TGQ" rowHeight="75" style="IBUITableViewCellStyleSubtitle" id="gtC-AE-3xy">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gtC-AE-3xy" id="6Pl-UC-Tgp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PD7-A4-1jk">
+                                                    <rect key="frame" x="20" y="17" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fy3-MB-TGQ">
+                                                    <rect key="frame" x="20" y="40.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oMN-eu-c8a" firstAttribute="leading" secondItem="gdR-If-FwD" secondAttribute="leading" id="YHS-Yx-jys"/>
+                            <constraint firstItem="oMN-eu-c8a" firstAttribute="top" secondItem="gdR-If-FwD" secondAttribute="top" id="hKN-vT-B3f"/>
+                            <constraint firstItem="oMN-eu-c8a" firstAttribute="bottom" secondItem="gdR-If-FwD" secondAttribute="bottom" id="jzt-ow-Ae2"/>
+                            <constraint firstItem="oMN-eu-c8a" firstAttribute="trailing" secondItem="gdR-If-FwD" secondAttribute="trailing" id="yf1-zk-6gb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gdR-If-FwD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Timers" id="x1O-qz-40c">
+                        <barButtonItem key="rightBarButtonItem" image="timer" catalog="system" id="VSH-re-YBr">
+                            <color key="tintColor" red="0.79701307929999998" green="0.73376669839999997" blue="0.87012224739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="yLB-ka-zSQ" kind="presentation" id="lrL-E1-Ndh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="oMN-eu-c8a" id="Jrb-xd-7dD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nuH-Qd-WTG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="999.77678571428567"/>
+        </scene>
+        <!--Timers-->
+        <scene sceneID="b4r-qN-cXD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EYu-G4-Sb4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Timers" image="square.and.arrow.down" catalog="system" id="QWe-Rq-s1x"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="46F-23-lgJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LCp-EZ-XkT" kind="relationship" relationship="rootViewController" id="X77-YQ-Jlr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u7m-tE-Bla" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="1000"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square.and.arrow.down" catalog="system" width="60" height="64"/>
+        <image name="timer" catalog="system" width="64" height="60"/>
+    </resources>
 </document>

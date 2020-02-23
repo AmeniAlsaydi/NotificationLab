@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CreateViewController: UIViewController {
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var addButton: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 
