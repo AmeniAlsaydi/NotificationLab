@@ -29,7 +29,7 @@ class CreateViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addButton.isEnabled = false
     }
     
     private func createLocalNotification() {
@@ -72,10 +72,14 @@ class CreateViewController: UIViewController {
     
     @IBAction func timerChanged(_ sender: UIDatePicker) {
         
+        addButton.isEnabled = true
+        
         timeInterval = sender.countDownDuration // Use this property to get and set the currently selected value when the date picker’s mode property is set to "countdown timer"
     }
     @IBAction func createButtonPressed(_ sender: UIButton) {
+        createLocalNotification()
         delegate?.didCreateTimer(self)
+        dismiss(animated: true)
     }
 }
 

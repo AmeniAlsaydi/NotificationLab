@@ -32,7 +32,15 @@ class ListViewController: UIViewController {
         
         checkForNotificationAuthorization()
         loadNotifications()
-
+        center.delegate = self // setting this vc as the unnotificationcenter delegate
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let navController = segue.destination as? UINavigationController, let createVC =  navController.viewControllers.first as? CreateViewController else {
+            fatalError("couldnt get createVc")
+        }
+        
+        createVC.delegate = self
     }
     
     @objc private func loadNotifications() {
@@ -68,7 +76,6 @@ class ListViewController: UIViewController {
         }
       }
     }
-
 }
 
 extension ListViewController: UITableViewDataSource {
@@ -78,6 +85,22 @@ extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "timerCell", for: indexPath)
+        let timerNotification = timerNotifications[indexPath.row]
+        cell.textLabel?.text = timerNotification.content.title
+        cell.detailTextLabel?.text = "Timer"
         return cell
+    }
+}
+
+extension ListViewController: CreateVCDelegate {
+    func didCreateTimer(_ createVC: CreateViewController) {
+        loadNotifications()
+    }
+}
+
+extension ListViewController: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+      completionHandler(.alert)
     }
 }
