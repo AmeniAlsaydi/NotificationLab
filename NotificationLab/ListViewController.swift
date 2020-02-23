@@ -15,12 +15,34 @@ class ListViewController: UIViewController {
     
     private let center = UNUserNotificationCenter.current()
 
+    // data for table view
+    private var timerNotifications = [UNNotificationRequest]() {
+      didSet {
+        DispatchQueue.main.async {
+          self.tableView.reloadData()
+        }
+      }
+    }
+    
+    private let pendingNotification = PendingNotification()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         
         checkForNotificationAuthorization()
+        loadNotifications()
 
+    }
+    
+    @objc private func loadNotifications() {
+      pendingNotification.getPendingNotifications { (requests) in
+        self.timerNotifications = requests
+        // stop the refresh control from animating and remove from the UI
+//        DispatchQueue.main.async {
+//          self.refreshControl.endRefreshing()
+//        }
+      }
     }
     
     private func checkForNotificationAuthorization() {
@@ -51,7 +73,7 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return timerNotifications.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

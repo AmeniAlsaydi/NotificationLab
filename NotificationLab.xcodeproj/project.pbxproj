@@ -14,6 +14,7 @@
 		B76B1DB42402AF580075A8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B76B1DB32402AF580075A8E4 /* Assets.xcassets */; };
 		B76B1DB72402AF580075A8E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76B1DB52402AF580075A8E4 /* LaunchScreen.storyboard */; };
 		B76B1DBF2402B5DB0075A8E4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76B1DBE2402B5DB0075A8E4 /* ListViewController.swift */; };
+		B76B1DC12402C2C80075A8E4 /* PendingTimerNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76B1DC02402C2C80075A8E4 /* PendingTimerNotifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B76B1DB62402AF580075A8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B76B1DB82402AF580075A8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B76B1DBE2402B5DB0075A8E4 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		B76B1DC02402C2C80075A8E4 /* PendingTimerNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTimerNotifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				B76B1DAC2402AF550075A8E4 /* SceneDelegate.swift */,
 				B76B1DAE2402AF550075A8E4 /* CreateViewController.swift */,
 				B76B1DBE2402B5DB0075A8E4 /* ListViewController.swift */,
+				B76B1DC02402C2C80075A8E4 /* PendingTimerNotifications.swift */,
 				B76B1DB02402AF550075A8E4 /* Main.storyboard */,
 				B76B1DB32402AF580075A8E4 /* Assets.xcassets */,
 				B76B1DB52402AF580075A8E4 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B76B1DC12402C2C80075A8E4 /* PendingTimerNotifications.swift in Sources */,
 				B76B1DAF2402AF550075A8E4 /* CreateViewController.swift in Sources */,
 				B76B1DAB2402AF550075A8E4 /* AppDelegate.swift in Sources */,
 				B76B1DBF2402B5DB0075A8E4 /* ListViewController.swift in Sources */,
